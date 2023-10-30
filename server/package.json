@@ -5,13 +5,16 @@
   "main": "src/server.js",
   "scripts": {
     "watch": "nodemon src/server.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
     "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.5.2",
