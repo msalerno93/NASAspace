@@ -1,3 +1,4 @@
+const axios = require('axios')
 const launchesDatabase = require("./launches.mongo");
 const planets = require('./planets.mongo')
 
@@ -15,6 +16,10 @@ const launch = {
 };
 
 saveLaunch(launch);
+
+async function loadLaunchData() {
+  console.log();
+}
 
 async function existsLaunchWithId(launchId) {
   return await launchesDatabase.findOne({
@@ -91,4 +96,5 @@ module.exports = {
   scheduleNewLaunch,
   existsLaunchWithId,
   abortLaunchById,
+  loadLaunchData,
 };
